@@ -6,3 +6,4 @@ app.config["MONGO_URI"] = "mongodb+srv://week3:1yDxm2EdXKkIwby4@cluster0.xtk0f.m
 mongo = PyMongo(app)
 
 
+# class FruitSchema(Schema)
