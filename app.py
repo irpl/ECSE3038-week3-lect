@@ -46,12 +46,12 @@ def get_fruits():
 #! FIX THIS CUZ IT BREAKS
 @app.route("/fruit/<ObjectId:id>", methods=["PATCH"])
 def update_fruit(id):
-  mongo.db.fruits.update_one({"_id": id}, {"$set": request.data })
+  mongo.db.fruits.update_one({"_id": id}, {"$set": request.json })
 
   fruit = mongo.db.fruits.find_one(id)
 
   fruit_json = loads(dumps(fruit))
-  return fruit_json
+  return jsonify(fruit_json)
 
 
 @app.route("/fruit/<ObjectId:id>", methods=["DELETE"])
